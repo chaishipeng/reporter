@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,8 @@ public class ModelContext {
     private Map data;
 
     private Object currentData;
+
+    private Map metaData = new HashMap();
 
     public HSSFWorkbook getBook() {
         return book;
@@ -52,5 +55,13 @@ public class ModelContext {
 
     public void setCurrentData(Object currentData) {
         this.currentData = currentData;
+    }
+
+    public Object getMeta(String key){
+        return metaData.get(key);
+    }
+
+    public void setMeta(String key, Object obj){
+        metaData.put(key, obj);
     }
 }

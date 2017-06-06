@@ -19,22 +19,28 @@ public class XmlTest {
         List list = new ArrayList();
 
         Map params = new HashMap();
-        params.put("Testket", "TestValue1");
+        params.put("name", "adasa");
+        params.put("age", "12");
+        params.put("sex", "男");
         list.add(params);
 
         Map params2 = new HashMap();
-        params2.put("Testket", "TestValue2");
+        params2.put("name", "trfsc");
+        params2.put("age", "17");
+        params2.put("sex", "男");
         list.add(params2);
 
         Map params3 = new HashMap();
-        params3.put("Testket", "TestValue3");
+        params3.put("name", "09xna");
+        params3.put("age", "26");
+        params3.put("sex", "女");
         list.add(params3);
 
         data.put("List", list);
 
 
         XmlReporter xmlReporter = new XmlReporter();
-        xmlReporter.loadTemplate(new FileInputStream("/Users/chaishipeng/code/reportman/src/test/java/com/dianping/vc/reportman/template.xml"));
+        xmlReporter.loadTemplate(new FileInputStream("/Users/chaishipeng/lifeCode/reporter/src/test/java/com/dianping/vc/reporter/template.xml"));
         xmlReporter.write(new FileOutputStream("/Users/chaishipeng/TempFile/test" + System.currentTimeMillis() + ".xls"), data);
 
     }

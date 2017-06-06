@@ -34,6 +34,9 @@ public abstract class ValueModel extends AbstractModel<HSSFCell> {
         if (value.startsWith("{") && value.endsWith("}")) {
             return context.getData(value.substring(1, value.length() - 1));
         }
+        if (value.startsWith("$_")){
+            return context.getMeta(value);
+        }
         return value;
     }
 }

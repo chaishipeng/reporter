@@ -1,5 +1,6 @@
 package com.dianping.vc.reporter.model;
 
+import com.dianping.vc.reporter.model.context.ContextConstants;
 import com.dianping.vc.reporter.model.context.ModelContext;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -29,10 +30,14 @@ public class RowModel extends AbstractModel<HSSFSheet> {
             return;
         }
         List<Object> list = getList(context);
+        int index = 0;
         for (Object obj : list) {
+            context.setMeta(ContextConstants.LIST_INDEX, index);
+            context.setMeta(ContextConstants.LIST_PHYSICAL_INDEX, index + 1);
             HSSFRow row = sheet.createRow(sheet.getPhysicalNumberOfRows());
             context.setCurrentData(obj);
             super.childCreate(row, context);
+            index ++;
         }
     }
 

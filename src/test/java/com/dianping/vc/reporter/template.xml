@@ -3,7 +3,16 @@
     <sheet name="sheetCeshi">
         <row>
             <cell>
-               <text value="表头"></text>
+               <text value="序号"></text>
+            </cell>
+            <cell>
+                <text value="姓名"></text>
+            </cell>
+            <cell>
+                <text value="年龄"></text>
+            </cell>
+            <cell>
+                <text value="性别"></text>
             </cell>
         </row>
         <row repeat="List">
@@ -11,10 +20,16 @@
                 <style>
                     <font color="red"/>
                 </style>
-                <text value="序号"></text>
+                <text value="$_listPhysicalIndex"></text>
             </cell>
             <cell>
-                <text value="{Testket}"></text>
+                <text value="{name}"></text>
+            </cell>
+            <cell>
+                <text value="{age}"></text>
+            </cell>
+            <cell>
+                <text value="{sex}"></text>
             </cell>
         </row>
     </sheet>
