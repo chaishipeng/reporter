@@ -1,5 +1,8 @@
 package com.dianping.vc.reporter;
 
+import com.dianping.vc.reporter.template.Template;
+import com.dianping.vc.reporter.template.TemplateConfiguration;
+import com.dianping.vc.reporter.template.XmlTemplateConfiguration;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -39,9 +42,10 @@ public class XmlTest {
         data.put("List", list);
 
 
-        XmlReporter xmlReporter = new XmlReporter();
-        xmlReporter.loadTemplate(new FileInputStream("/Users/chaishipeng/lifeCode/reporter/src/test/java/com/dianping/vc/reporter/template.xml"));
-        xmlReporter.write(new FileOutputStream("/Users/chaishipeng/TempFile/test" + System.currentTimeMillis() + ".xls"), data);
+        TemplateConfiguration templateConfiguration = new XmlTemplateConfiguration();
+        Template template = templateConfiguration.loadTemplate(new FileInputStream("/Users/chaishipeng/lifeCode/reporter/src/test/java/com/dianping/vc/reporter/template.xml"));
+
+        template.export(new FileOutputStream("/Users/chaishipeng/TempFile/test" + System.currentTimeMillis() + ".xls"), data);
 
     }
 
