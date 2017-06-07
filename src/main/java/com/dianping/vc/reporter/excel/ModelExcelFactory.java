@@ -17,6 +17,9 @@ public class ModelExcelFactory implements ExcelFactory{
         context.setData(data);
         excelModel.create(context, null);
         context.getBook().write(os);
+        if (os != null) {
+            os.close();
+        }
     }
 
 }
