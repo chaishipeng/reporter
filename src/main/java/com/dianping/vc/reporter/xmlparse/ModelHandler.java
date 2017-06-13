@@ -8,6 +8,8 @@ import org.xml.sax.Attributes;
  */
 public interface ModelHandler {
 
-    Model create(Attributes attributes);
+    Model create();
+
+    void fillAttr(Model model, Attributes attributes);
 
 }

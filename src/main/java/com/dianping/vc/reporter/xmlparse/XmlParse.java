@@ -40,6 +40,7 @@ public class XmlParse {
         modelFactory.registerHandler("date", new DateHandler());
         modelFactory.registerHandler("style", new StyleHandler());
         modelFactory.registerHandler("font", new FontHandler());
+        modelFactory.registerHandler("textMap", new TextMapHandler());
     }
 
 }

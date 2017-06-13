@@ -14,9 +14,10 @@ public class XmlTemplateConfiguration implements TemplateConfiguration {
 
     private String basePath;
 
+    private XmlParse xmlParse;
+
     public Template loadTemplate(InputStream is) throws IOException {
         XmlParse xmlParse = getXmlParse();
-        xmlParse.init();
         try {
             ExcelModel excelModel = (ExcelModel) xmlParse.read(is);
             XmlTemplate template = new XmlTemplate();
@@ -40,7 +41,17 @@ public class XmlTemplateConfiguration implements TemplateConfiguration {
     }
 
     protected XmlParse getXmlParse(){
-        return new XmlParse();
+        if (xmlParse != null) {
+            return xmlParse;
+        }
+        synchronized (this){
+            if (xmlParse != null) {
+                return xmlParse;
+            }
+            xmlParse = new XmlParse();
+            xmlParse.init();
+            return xmlParse;
+        }
     }
 
 }

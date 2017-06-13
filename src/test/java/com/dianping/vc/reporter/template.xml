@@ -29,7 +29,7 @@
                 <text value="{age}"></text>
             </cell>
             <cell>
-                <text value="{sex}"></text>
+                <textMap _1="猪" _2="狗"  value="{sex}"/>
             </cell>
         </row>
     </sheet>

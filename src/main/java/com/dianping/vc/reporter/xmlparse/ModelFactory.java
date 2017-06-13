@@ -16,8 +16,8 @@ public class ModelFactory {
 
     public Model createModel(String modelName, Attributes attributes) {
         ModelHandler handler = handlerMap.get(modelName);
-        Model model = handler.create(attributes);
-        AttributeHelper.fillAttr(model, attributes);
+        Model model = handler.create();
+        handler.fillAttr(model, attributes);
         return model;
     }
 

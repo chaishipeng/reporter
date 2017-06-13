@@ -24,19 +24,19 @@ public class XmlTest {
         Map params = new HashMap();
         params.put("name", "adasa");
         params.put("age", "12");
-        params.put("sex", "男");
+        params.put("sex", "1");
         list.add(params);
 
         Map params2 = new HashMap();
         params2.put("name", "trfsc");
         params2.put("age", "17");
-        params2.put("sex", "男");
+        params2.put("sex", "1");
         list.add(params2);
 
         Map params3 = new HashMap();
         params3.put("name", "09xna");
         params3.put("age", "26");
-        params3.put("sex", "女");
+        params3.put("sex", "2");
         list.add(params3);
 
         data.put("List", list);

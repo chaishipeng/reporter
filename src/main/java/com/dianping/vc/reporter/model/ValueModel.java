@@ -22,7 +22,7 @@ public abstract class ValueModel extends AbstractModel<HSSFCell> {
     Object createInner(ModelContext context, HSSFCell hssfCell) {
         Object cellValue = getCellValue(context);
         fillValue(hssfCell, cellValue, context);
-        return null;
+        return hssfCell;
     }
 
     abstract void fillValue(HSSFCell hssfCell, Object value, ModelContext context);

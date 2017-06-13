@@ -8,8 +8,8 @@ import org.xml.sax.Attributes;
 /**
  * Created by chaishipeng on 2017/6/6.
  */
-public class FontHandler implements ModelHandler {
-    public Model create(Attributes attributes) {
+public class FontHandler extends AbstractModelHandler {
+    public Model create() {
         return new FontModel();
     }
 }
